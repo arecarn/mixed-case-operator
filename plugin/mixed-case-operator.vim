@@ -80,9 +80,10 @@ function! s:mixed_case(type)
     endif
     let regtype = type
 
-    let repl = substitute(@@, '\w\+', '\u\L&', 'g')
+    let repl = substitute(@@, '\w\+', '\u\L\0', 'g')
+
     "don't capitalize the  t in can't or the re in your're
-    let repl = substitute(repl, '\w\+', '\u&', 'g')
+    let repl = substitute(repl, '''\zs\w\+', '\l\0', 'g')
 
     call setreg('@', repl, regtype)
 
