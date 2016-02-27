@@ -34,21 +34,21 @@ call s:do_map(
             \ "n",
             \ "gM",
             \ ":\<C-U>set opfunc=mixed_case_operator#operator\<CR>g@",
-            \ "operator-mixed-case",
+            \ "mixed-case-operator",
             \ g:operator_mixed_case_default_mapping,)
 
 call s:do_map(
             \ "n",
             \ "gMM",
             \ ":\<C-U>set opfunc=mixed_case_operator#operator<bar>:execute 'normal! '.v:count1.'g@_'\<CR>",
-            \ "operator-line-mixed-case",
+            \ "mixed-case-operator-line",
             \ g:operator_mixed_case_default_mapping,)
 
 call s:do_map(
             \ "x",
             \ "gM",
             \ ":\<C-U>call mixed_case_operator#operator(visualmode())\<CR>",
-            \ "operator-visual-mixed-case",
+            \ "mixed-case-operator-visual",
             \ g:operator_mixed_case_default_mapping,)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
