@@ -1,0 +1,66 @@
+*mixed-case-operator* operator to make text mixed/title case
+
+                                  mixed-case-operator~
+
+Description ................................ |mixed-case-operator-description|
+Usage ...................................... |mixed-case-operator-usage|
+    Key Mappings ........................... |mixed-case-operator-key-mappings|
+Configuration .............................. |mixed-case-operator-configuration|
+    Variables .............................. |mixed-case-operator-variables|
+
+                                                       *mixed-case-operator.txt*
+
+==============================================================================
+DESCRIPTION                                    *mixed-case-operator-description*
+
+A simple operator in the same spirit of |gu| and |gU| operators that makes the
+text is operates on mixed case (or title case). The operator tries to be
+somewhat smart about how it does the mix casing with special attention for
+apostrophes in word like don't and tom's
+
+Example of Mix Casing: >
+
+    that's a cool hat
+
+Becomes: >
+
+    That's A Cool Hat
+
+==============================================================================
+USAGE                                                *mixed-case-operator-usage*
+
+------------------------------------------------------------------------------
+KEY MAPPINGS                                  *mixed-case-operator-key-mappings*
+
+                                                *gM*
+gM{motion}              Make {motion} text mixed case.
+                        Plug mapping: `<Plug>(mixed-case-operator)`
+
+                                                *gMM*
+gMM                     Make current line mixed case.
+                        Plug mapping: `<Plug>(mixed-case-operator-line)`
+
+                                                *v_gM*
+{Visual}gM              Make highlighted text mixed case.
+                        Plug mapping: `<Plug>(mixed-case-operator-visual)`
+
+==============================================================================
+CONFIGURATION                                *mixed-case-operator-configuration*
+
+------------------------------------------------------------------------------
+VARIABLES                                        *mixed-case-operator-variables*
+
+                                         *g:mixed_case_operator_default_mapping*
+g:mixed_case_operator_default_mapping
+                        If set to 0 disables the default mappings
+                        (default: 1)
+
+                        Example of alternate mappings: >
+
+                        let g:mixed_case_operator_default_mapping = 0
+                        nmap g) <Plug>(mixed-case-operator)
+                        nmap g)) <Plug>(mixed-case-operator-line)
+                        xmap g) <Plug>(mixed-case-operator-visual)
+<
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:fdm=manual:
