@@ -1,17 +1,17 @@
-*mixed-case-operator* operator to make text mixed/title case
+*operator-mixed-case* operator to make text mixed/title case
 
-                                  mixed-case-operator~
+                             operator-mixed-case~
 
-Description ................................ |mixed-case-operator-description|
-Usage ...................................... |mixed-case-operator-usage|
-    Key Mappings ........................... |mixed-case-operator-key-mappings|
-Configuration .............................. |mixed-case-operator-configuration|
-    Variables .............................. |mixed-case-operator-variables|
+Description ................................ |operator-mixed-case-description|
+Usage ...................................... |operator-mixed-case-usage|
+    Key Mappings ........................... |operator-mixed-case-key-mappings|
+Configuration .............................. |operator-mixed-case-configuration|
+    Variables .............................. |operator-mixed-case-variables|
 
-                                                       *mixed-case-operator.txt*
+                                                       *operator-mixed-case.txt*
 
 ==============================================================================
-DESCRIPTION                                    *mixed-case-operator-description*
+DESCRIPTION                                    *operator-mixed-case-description*
 
 A simple operator in the same spirit of |gu| and |gU| operators that makes the
 text is operates on mixed case (or title case). The operator tries to be
@@ -27,28 +27,28 @@ Becomes: >
     That's A Cool Hat
 
 ==============================================================================
-USAGE                                                *mixed-case-operator-usage*
+USAGE                                                *operator-mixed-case-usage*
 
 ------------------------------------------------------------------------------
-KEY MAPPINGS                                  *mixed-case-operator-key-mappings*
+KEY MAPPINGS                                  *operator-mixed-case-key-mappings*
 
                                                 *gM*
 gM{motion}              Make {motion} text mixed case.
-                        Plug mapping: `<Plug>(mixed-case-operator)`
+                        Plug mapping: `<Plug>(operator-mixed-case)`
 
                                                 *gMM*
 gMM                     Make current line mixed case.
-                        Plug mapping: `<Plug>(mixed-case-operator-line)`
+                        Plug mapping: `<Plug>(operator-mixed-case-line)`
 
                                                 *v_gM*
 {Visual}gM              Make highlighted text mixed case.
-                        Plug mapping: `<Plug>(mixed-case-operator-visual)`
+                        Plug mapping: `<Plug>(operator-mixed-case-visual)`
 
 ==============================================================================
-CONFIGURATION                                *mixed-case-operator-configuration*
+CONFIGURATION                                *operator-mixed-case-configuration*
 
 ------------------------------------------------------------------------------
-VARIABLES                                        *mixed-case-operator-variables*
+VARIABLES                                        *operator-mixed-case-variables*
 
                                          *g:mixed_case_operator_default_mapping*
 g:mixed_case_operator_default_mapping
@@ -58,9 +58,9 @@ g:mixed_case_operator_default_mapping
                         Example of alternate mappings: >
 
                         let g:mixed_case_operator_default_mapping = 0
-                        nmap g) <Plug>(mixed-case-operator)
-                        nmap g)) <Plug>(mixed-case-operator-line)
-                        xmap g) <Plug>(mixed-case-operator-visual)
+                        nmap g) <Plug>(operator-mixed-case)
+                        nmap g)) <Plug>(operator-mixed-case-line)
+                        xmap g) <Plug>(operator-mixed-case-visual)
 <
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:fdm=manual:
