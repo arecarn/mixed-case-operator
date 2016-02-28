@@ -10,7 +10,7 @@ set cpo&vim
 
 " PUBLIC_FUNCTIONS {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! mixed_case_operator#operator(type)
+function! operator_mixed_case#operator(type)
     "Backup Settings That We Will Change
     let sel_save = &selection
     let cb_save = &clipboard
@@ -25,7 +25,7 @@ function! mixed_case_operator#operator(type)
         let type=a:type
     elseif a:type == 'block'
         silent exe "normal! `[\<C-V>`]y"
-        let type=''
+        let type='\<C-V>'
     elseif a:type == 'line'
         "line-based text motion
         silent exe "normal! `[V`]y"
