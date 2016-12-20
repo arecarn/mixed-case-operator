@@ -11,23 +11,23 @@ set cpo&vim
 " PUBLIC_FUNCTIONS {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! operator_mixed_case#operator(type)
-    "Backup Settings That We Will Change
+    " backup settings that we will change
     let sel_save = &selection
     let cb_save = &clipboard
-    "make selection and clipboard work the way we need
+    " make selection and clipboard work the way we need
     set selection=inclusive clipboard-=unnamed clipboard-=unnamedplus
-    "Backup The Unnamed Register, Which We Will Be Yanking Into
+    " backup the unnamed register, which we will be yanking into
     let reg_save = @@
 
     if a:type =~ '^.$'
-        "if type is 'v', 'V', or '<C-V>' (i.e. 0x16) then re-select the visual region
+        " if type is 'v', 'V', or '<C-V>' (i.e. 0x16) then re-select the visual region
         silent exe "normal! `<" . a:type . "`>y"
         let type=a:type
     elseif a:type == 'block'
         silent exe "normal! `[\<C-V>`]y"
         let type='\<C-V>'
     elseif a:type == 'line'
-        "line-based text motion
+        " line-based text motion
         silent exe "normal! `[V`]y"
         let type='V'
     else
@@ -38,7 +38,7 @@ function! operator_mixed_case#operator(type)
 
     let repl = substitute(@@, '\w\+', '\u\L\0', 'g')
 
-    "don't capitalize the  t in can't or the re in your're
+    " don't capitalize the t in can't or the re in your're
     let repl = substitute(repl, '''\zs\w\+', '\l\0', 'g')
 
     call setreg('@', repl, regtype)
@@ -50,7 +50,7 @@ function! operator_mixed_case#operator(type)
 
     set nohlsearch
 
-    "Restore Saved Settings And Register Value
+    " restore saved settings and register value
     let @@ = reg_save
     let &selection = sel_save
     let &clipboard = cb_save
